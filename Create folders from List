@@ -1,1 +1,10 @@
+Sub CreateFolders()
 
+path = InputBox(“Enter the path where you want to create the folders”)
+cell = InputBox(“First cell”)
+Range(cell).Select
+Do While ActiveCell.Value <> “”
+MkDir (path & “/” & ActiveCell.Value)
+ActiveCell.Offset(1, 0).Select
+Loop
+End Sub
